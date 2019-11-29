@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from foods.models import Food
+
+
+class FoodAdmin(admin.ModelAdmin):
+    list_display = ('id', 'menu_vegetariano', 'menu_carnivoro')
+    search_fields = ('id',)
+
+
+admin.site.register(Food, FoodAdmin)
