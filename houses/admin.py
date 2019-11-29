@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import User, Group
 
 from houses.models import House
 
@@ -10,3 +11,7 @@ class HouseAdmin(admin.ModelAdmin):
 
 
 admin.site.register(House, HouseAdmin)
+
+#admin users
+admin.site.unregister(User)
+admin.site.unregister(Group)
